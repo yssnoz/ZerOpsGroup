@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ZerOps Group — recall reverse logistics</title>
+<meta name="description" content="Yassine Zerhouni connects companies mid-recall with the certified reverse-logistics operators who make the problem disappear while the clock the regulator started is still running." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+Georgian:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#d9e2ee;--panel:#e7edf6;--ink:#0c1a2b;--body:#313e4d;--sub:#566472;--line:#bfccdd;
+    --accent:#092a4b;--accent-2:#3f77b3;
+    --display:"Noto Serif Georgian",Georgia,"Times New Roman",serif;
+    --sans:"Inter",system-ui,-apple-system,Segoe UI,sans-serif;
+    --mono:"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:720px;margin:0 auto;padding:0 26px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+  .label{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--sub)}
+
+  /* ---- CINEMATIC HERO (photo + navy overlay, light text) ---- */
+  .hero-block{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(8,18,32,.60) 0%, rgba(8,18,32,.68) 45%, rgba(8,18,32,.90) 100%),
+      url('hero-city.jpg') center 38% / cover no-repeat;
+  }
+  .hero-head{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:16px}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+  .brand .name{font-family:var(--display);font-weight:600;font-size:18px;color:#f4f7fb;letter-spacing:-.01em}
+  .hnav{display:flex;gap:22px}
+  .hnav a{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:#c6d3e4;text-decoration:none}
+  .hnav a:hover{color:#fff}
+
+  .hero-in{padding:74px 0 88px;max-width:600px}
+  .hero-in .eyebrow{color:#8bb8ea}
+  .hero-in h1{font-family:var(--display);font-weight:600;font-size:clamp(31px,5vw,47px);line-height:1.16;letter-spacing:-.02em;color:#f4f7fb;margin:18px 0 22px;text-shadow:0 1px 24px rgba(6,14,26,.45)}
+  .hero-in h1 .em{color:#86b6ec}
+  .hero-in .meta{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:#b9c6d8;margin:0 0 30px}
+  .hero-cta{display:inline-block;font-family:var(--mono);font-size:14px;letter-spacing:.02em;color:#fff;background:#4d86c4;padding:14px 24px;text-decoration:none;border-radius:2px;transition:background .15s ease}
+  .hero-cta:hover{background:#619ad6}
+
+  /* ---- generic section ---- */
+  .section{padding:52px 0;border-top:1px solid var(--line)}
+  .section:first-of-type{border-top:0}
+  .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .sec-head .tick{width:7px;height:7px;background:var(--accent-2);border-radius:1px;flex:none}
+  .sec-note{font-family:var(--mono);font-size:11.5px;color:var(--sub);margin:0 0 26px;letter-spacing:.01em}
+
+  .feed{list-style:none;margin:0;padding:0}
+  .feed li{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+  .feed li:last-child{border-bottom:0}
+  .feed .dot{color:var(--accent-2);font-family:var(--mono);font-size:13px;flex:none}
+  .feed .txt{font-size:16px;color:var(--body)}
+  .feed-src{color:var(--sub);font-size:14px;margin-top:18px;font-style:italic}
+
+  .how{margin:0;padding:0;list-style:none}
+  .how li{padding:20px 0;border-bottom:1px solid var(--line)}
+  .how li:last-child{border-bottom:0}
+  .how .pair{font-family:var(--mono);color:var(--accent);font-size:13px;letter-spacing:.01em;font-weight:500}
+  .how .desc{display:block;margin-top:8px;color:var(--body);font-size:16px}
+  .qualify{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:3px;padding:20px 22px;margin-top:28px;font-size:16px;color:var(--body)}
+  .qualify b{color:var(--ink);font-weight:600}
+
+  .essays{list-style:none;margin:0;padding:0}
+  .essays li{padding:11px 0;border-bottom:1px solid var(--line)}
+  .essays li:last-child{border-bottom:0}
+  .essays a{font-family:var(--display);font-size:20px;font-weight:500;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+  .essays a .arw{font-family:var(--mono);font-size:14px;color:var(--accent-2);transition:transform .15s ease}
+  .essays a:hover{color:var(--accent-2)}
+  .essays a:hover .arw{transform:translateX(4px)}
+
+  .cta{background:var(--panel);border-top:1px solid var(--line)}
+  .cta-in{padding:58px 0 66px}
+  .cta .eyebrow{color:var(--accent-2)}
+  .cta h2{font-family:var(--display);font-weight:600;font-size:26px;color:var(--ink);margin:14px 0 10px;letter-spacing:-.01em}
+  .scarcity{font-family:var(--mono);font-size:13px;color:var(--accent-2);margin:0 0 22px}
+  .cta p{color:var(--body);font-size:16.5px;max-width:54ch;margin:0 0 24px}
+  .book{display:inline-block;font-family:var(--mono);font-size:14px;letter-spacing:.02em;color:#fff;background:var(--accent);padding:14px 24px;text-decoration:none;border-radius:2px;transition:background .15s ease}
+  .book:hover{background:var(--accent-2)}
+
+  .site-foot{border-top:1px solid var(--line)}
+  .foot-in{padding:26px 0 42px;font-family:var(--mono);font-size:12px;color:var(--sub);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .foot-in a{color:var(--sub);text-decoration:none}
+  .foot-in a:hover{color:var(--accent)}
+
+  a:focus-visible,.book:focus-visible,.hero-cta:focus-visible{outline:2px solid #86b6ec;outline-offset:3px}
+  @media (max-width:560px){
+    .hnav{gap:15px}
+    .hero-in{padding:56px 0 64px}
+    .section{padding:42px 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero-block">
+  <div class="wrap hero-head">
+    <a class="brand" href="/">
+      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <line x1="9.5" y1="16" x2="22.5" y2="16" stroke="#f4f7fb" stroke-width="2.5"/>
+        <circle cx="8" cy="16" r="4.6" fill="#f4f7fb"/>
+        <circle cx="24" cy="16" r="4.6" fill="#86b6ec"/>
+      </svg>
+      <span class="name">ZerOps Group</span>
+    </a>
+    <nav class="hnav">
+      <a href="#tracking">Tracking</a>
+      <a href="#work">How I work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">Recall reverse logistics</span>
+    <h1>Yassine Zerhouni connects <span class="em">companies mid-recall</span> with the certified reverse-logistics operators who make the problem disappear while the clock the regulator started is still running.</h1>
+    <p class="meta">Independent. Building this lane in the open, 2026&ndash;.</p>
+    <a class="hero-cta" href="#contact">Book a 20-minute call &rarr;</a>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="section" id="tracking">
+    <div class="sec-head"><span class="tick"></span><span class="label">Live signal</span></div>
+    <p class="sec-note">Public recall data. This is the market I watch.</p>
+    <ul class="feed">
+      <li><span class="dot">&rarr;</span><span class="txt">Every week, the FDA, USDA, and CPSC file new recalls: company, product, quantity, how far it spread.</span></li>
+      <li><span class="dot">&rarr;</span><span class="txt">Each filing is a company that suddenly has to pull product back, quarantine it, and destroy or rework it.</span></li>
+      <li><span class="dot">&rarr;</span><span class="txt">Almost none of them built the warehouse capacity for it. The scramble starts from zero.</span></li>
+      <li><span class="dot">&rarr;</span><span class="txt">That first week, before the returns pile up with nowhere to go, is the window I work in.</span></li>
+    </ul>
+    <p class="feed-src">Public data, published continuously by the FDA, USDA FSIS, and CPSC. I read it so I&rsquo;m positioned before the call starts.</p>
+  </section>
+
+  <section class="section" id="work">
+    <div class="sec-head"><span class="tick"></span><span class="label">How I work</span></div>
+    <p class="sec-note">No deal to point at yet &mdash; so here&rsquo;s exactly what I put in motion.</p>
+    <ul class="how">
+      <li>
+        <span class="pair">Company mid-recall &rarr; reverse-logistics operator</span>
+        <span class="desc">When the recall lands, the clock starts. I put a vetted warehouse that can receive, quarantine, and hold the product in the room inside the week, before returns pile up with nowhere to go.</span>
+      </li>
+      <li>
+        <span class="pair">Quarantined product &rarr; certified destruction or rework</span>
+        <span class="desc">Storage is step one. When the product has to be destroyed with paperwork the regulator will accept, or reworked and relabeled to be saved, I bring in the operator who does exactly that, not a generalist figuring it out on your dime.</span>
+      </li>
+    </ul>
+    <p class="qualify">
+      <b>How I qualify.</b> I don&rsquo;t forward leads and hope. Before any introduction, I&rsquo;ve checked both sides: your recall volume, states, and timeline against an operator&rsquo;s real capacity for quarantine, certified destruction, and rework. You get introduced to one warehouse that fits, not a list to chase. That is the whole product.
+    </p>
+  </section>
+
+  <section class="section" id="writing">
+    <div class="sec-head"><span class="tick"></span><span class="label">Writing</span></div>
+    <p class="sec-note">What I see in this market that outsiders miss.</p>
+    <ul class="essays">
+      <li><a href="thesis-1.html"><span>Nobody Builds for the Recall</span><span class="arw">&rarr;</span></a></li>
+      <li><a href="thesis-2.html"><span>The Clock Starts When the Notice Drops</span><span class="arw">&rarr;</span></a></li>
+    </ul>
+  </section>
+
+</main>
+
+<section class="cta" id="contact">
+  <div class="wrap cta-in">
+    <span class="eyebrow">Work with Yassine</span>
+    <h2>Tell me where you&rsquo;re at and what you&rsquo;re trying to fix.</h2>
+    <p class="scarcity">Taking my first 3 counterparties in this lane.</p>
+    <p>If you&rsquo;ve got an active recall and product with nowhere to go, or you run a warehouse that can take it, message me. I&rsquo;ll tell you fast whether there&rsquo;s a match.</p>
+    <a class="book" href="https://cal.com/yassine-zerhouni-zeropsgroup" target="_blank" rel="noopener">Book a 20-minute call &rarr;</a>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap foot-in">
+    <span>&copy; 2026 ZerOps Group &middot; Yassine Zerhouni</span>
+    <a href="mailto:medyassinezer@gmail.com">medyassinezer@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
