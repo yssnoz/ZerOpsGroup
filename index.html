@@ -10,18 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#d9e2ee;--panel:#e7edf6;--ink:#0c1a2b;--body:#313e4d;--sub:#566472;--line:#bfccdd;
+    --bg:#c7dfff;--panel:#dcebff;--ink:#0c1a2b;--body:#313e4d;--sub:#566472;--line:#a6c3e6;
     --accent:#092a4b;--accent-2:#3f77b3;
     --display:"Cinzel",Georgia,serif;
     --sans:"Raleway",system-ui,-apple-system,Segoe UI,sans-serif;
-    --mono:"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;
+    --mono:"Raleway",system-ui,sans-serif;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);font-size:18px;font-weight:500;line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
   .wrap{max-width:720px;margin:0 auto;padding:0 26px}
-  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
-  .label{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--sub)}
+  .eyebrow{font-family:var(--mono);font-weight:700;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase}
+  .label{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
 
   /* ---- WHITE NAV BAR (separate from hero) ---- */
   .site-head{background:#ffffff;border-bottom:1px solid var(--line)}
@@ -42,9 +42,9 @@
   }
   .hero-in{padding:46px 0 52px;max-width:600px}
   .hero-in .eyebrow{color:#8bb8ea}
-  .hero-in h1{font-family:var(--display);font-weight:600;font-size:clamp(29px,4.6vw,43px);line-height:1.24;letter-spacing:.005em;color:#f4f7fb;margin:16px 0 20px;text-shadow:0 1px 24px rgba(6,14,26,.45)}
+  .hero-in h1{font-family:var(--display);font-weight:400;font-size:clamp(29px,4.6vw,43px);line-height:1.24;letter-spacing:.005em;color:#f4f7fb;margin:16px 0 20px;text-shadow:0 1px 24px rgba(6,14,26,.45)}
   .hero-in h1 .em{color:#86b6ec}
-  .hero-in .meta{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:#b9c6d8;margin:0 0 28px}
+  .hero-in .meta{font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:.02em;color:#c4d2e4;margin:0 0 28px}
   .hero-cta{display:inline-block;font-family:var(--mono);font-size:14px;letter-spacing:.02em;color:#fff;background:#4d86c4;padding:13px 22px;text-decoration:none;border-radius:2px;transition:background .15s ease}
   .hero-cta:hover{background:#619ad6}
 
@@ -53,7 +53,7 @@
   .section:first-of-type{border-top:0}
   .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
   .sec-head .tick{width:7px;height:7px;background:var(--accent-2);border-radius:1px;flex:none}
-  .sec-note{font-family:var(--mono);font-size:11.5px;color:var(--sub);margin:0 0 26px;letter-spacing:.01em}
+  .sec-note{font-family:var(--mono);font-weight:600;font-size:13px;color:var(--body);margin:0 0 26px;letter-spacing:.005em}
 
   .feed{list-style:none;margin:0;padding:0}
   .feed li{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
@@ -110,7 +110,7 @@
     </a>
     <nav class="nav">
       <a href="#tracking">Tracking</a>
-      <a href="#work">How I work</a>
+      <a href="#work">How we work</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -129,37 +129,36 @@
 
   <section class="section" id="tracking">
     <div class="sec-head"><span class="tick"></span><span class="label">Live signal</span></div>
-    <p class="sec-note">Public recall data. This is the market I watch.</p>
+    <p class="sec-note">Public recall data. This is the market we watch.</p>
     <ul class="feed">
       <li><span class="dot">&rarr;</span><span class="txt">Every week, the FDA, USDA, and CPSC file new recalls: company, product, quantity, how far it spread.</span></li>
       <li><span class="dot">&rarr;</span><span class="txt">Each filing is a company that suddenly has to pull product back, quarantine it, and destroy or rework it.</span></li>
       <li><span class="dot">&rarr;</span><span class="txt">Almost none of them built the warehouse capacity for it. The scramble starts from zero.</span></li>
       <li><span class="dot">&rarr;</span><span class="txt">That first week, before the returns pile up with nowhere to go, is the window I work in.</span></li>
     </ul>
-    <p class="feed-src">Public data, published continuously by the FDA, USDA FSIS, and CPSC. I read it so I&rsquo;m positioned before the call starts.</p>
+    <p class="feed-src">Public data, published continuously by the FDA, USDA FSIS, and CPSC. We read it so we&rsquo;re positioned before the call starts.</p>
   </section>
 
   <section class="section" id="work">
-    <div class="sec-head"><span class="tick"></span><span class="label">How I work</span></div>
-    <p class="sec-note">No deal to point at yet &mdash; so here&rsquo;s exactly what I put in motion.</p>
+    <div class="sec-head"><span class="tick"></span><span class="label">How we work</span></div>
     <ul class="how">
       <li>
         <span class="pair">Company mid-recall &rarr; reverse-logistics operator</span>
-        <span class="desc">When the recall lands, the clock starts. I put a vetted warehouse that can receive, quarantine, and hold the product in the room inside the week, before returns pile up with nowhere to go.</span>
+        <span class="desc">When the recall lands, the clock starts. We put a vetted warehouse that can receive, quarantine, and hold the product in the room inside the week, before returns pile up with nowhere to go.</span>
       </li>
       <li>
         <span class="pair">Quarantined product &rarr; certified destruction or rework</span>
-        <span class="desc">Storage is step one. When the product has to be destroyed with paperwork the regulator will accept, or reworked and relabeled to be saved, I bring in the operator who does exactly that, not a generalist figuring it out on your dime.</span>
+        <span class="desc">Storage is step one. When the product has to be destroyed with paperwork the regulator will accept, or reworked and relabeled to be saved, we bring in the operator who does exactly that, not a generalist figuring it out on your dime.</span>
       </li>
     </ul>
     <p class="qualify">
-      <b>How I qualify.</b> I don&rsquo;t forward leads and hope. Before any introduction, I&rsquo;ve checked both sides: your recall volume, states, and timeline against an operator&rsquo;s real capacity for quarantine, certified destruction, and rework. You get introduced to one warehouse that fits, not a list to chase. That is the whole product.
+      <b>How we qualify.</b> We don&rsquo;t forward leads and hope. Before any introduction, we&rsquo;ve checked both sides: your recall volume, states, and timeline against an operator&rsquo;s real capacity for quarantine, certified destruction, and rework. You get introduced to one warehouse that fits, not a list to chase. That is the whole product.
     </p>
   </section>
 
   <section class="section" id="writing">
     <div class="sec-head"><span class="tick"></span><span class="label">Writing</span></div>
-    <p class="sec-note">What I see in this market that outsiders miss.</p>
+    <p class="sec-note">What we see in this market that outsiders miss.</p>
     <ul class="essays">
       <li><a href="thesis-1.html"><span>Nobody Builds for the Recall</span><span class="arw">&rarr;</span></a></li>
       <li><a href="thesis-2.html"><span>The Clock Starts When the Notice Drops</span><span class="arw">&rarr;</span></a></li>
@@ -171,9 +170,9 @@
 <section class="cta" id="contact">
   <div class="wrap cta-in">
     <span class="eyebrow">Work with Yassine</span>
-    <h2>Tell me where you&rsquo;re at and what you&rsquo;re trying to fix.</h2>
+    <h2>Tell us where you&rsquo;re at and what you&rsquo;re trying to fix.</h2>
     <p class="scarcity">Taking my first 3 counterparties in this lane.</p>
-    <p>If you&rsquo;ve got an active recall and product with nowhere to go, or you run a warehouse that can take it, message me. I&rsquo;ll tell you fast whether there&rsquo;s a match.</p>
+    <p>If you&rsquo;ve got an active recall and product with nowhere to go, or you run a warehouse that can take it, message us. We&rsquo;ll tell you fast whether there&rsquo;s a match.</p>
     <a class="book" href="https://cal.com/yassine-zerhouni-zeropsgroup" target="_blank" rel="noopener">Book a 20-minute call &rarr;</a>
   </div>
 </section>
