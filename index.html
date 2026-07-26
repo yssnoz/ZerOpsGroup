@@ -4,13 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ZerOps Group — recall reverse logistics</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
 <meta name="description" content="Yassine Zerhouni connects companies mid-recall with the certified reverse-logistics operators who make the problem disappear while the clock the regulator started is still running." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#ccd0de;--panel:#dcebff;--ink:#0c1a2b;--body:#313e4d;--sub:#566472;--line:#a6c3e6;
+    --bg:#c7dfff;--panel:#dcebff;--ink:#0c1a2b;--body:#313e4d;--sub:#566472;--line:#a6c3e6;
     --accent:#092a4b;--accent-2:#3f77b3;
     --display:"Cinzel",Georgia,serif;
     --sans:"Raleway",system-ui,-apple-system,Segoe UI,sans-serif;
@@ -77,15 +78,17 @@
   .essays a .arw{font-family:var(--mono);font-size:14px;color:var(--accent-2);transition:transform .15s ease}
   .essays a:hover{color:var(--accent-2)}
   .essays a:hover .arw{transform:translateX(4px)}
+  .essays a > span:first-child{border-bottom:2px solid var(--accent-2);padding-bottom:3px;transition:border-color .15s ease}
+  .essays a:hover > span:first-child{border-color:var(--accent)}
 
-  .cta{background:var(--panel);border-top:1px solid var(--line)}
+  .cta{background:var(--accent);border-top:1px solid rgba(255,255,255,.10)}
   .cta-in{padding:58px 0 66px}
-  .cta .eyebrow{color:var(--accent-2)}
-  .cta h2{font-family:var(--display);font-weight:600;font-size:26px;color:var(--ink);margin:14px 0 10px;letter-spacing:-.01em}
-  .scarcity{font-family:var(--mono);font-size:13px;color:var(--accent-2);margin:0 0 22px}
-  .cta p{color:var(--body);font-size:17.5px;max-width:54ch;margin:0 0 24px}
-  .book{display:inline-block;font-family:var(--mono);font-size:14px;letter-spacing:.02em;color:#fff;background:var(--accent);padding:14px 24px;text-decoration:none;border-radius:2px;transition:background .15s ease}
-  .book:hover{background:var(--accent-2)}
+  .cta .eyebrow{color:#86b6ec}
+  .cta h2{font-family:var(--display);font-weight:600;font-size:26px;color:#f4f7fb;margin:14px 0 10px;letter-spacing:-.01em}
+  .scarcity{font-family:var(--mono);font-weight:600;font-size:13px;color:#86b6ec;margin:0 0 22px}
+  .cta p{color:#c8d5e6;font-size:17.5px;max-width:54ch;margin:0 0 24px}
+  .book{display:inline-block;font-family:var(--mono);font-weight:600;font-size:14px;letter-spacing:.02em;color:#fff;background:#4d86c4;padding:14px 24px;text-decoration:none;border-radius:2px;transition:background .15s ease}
+  .book:hover{background:#619ad6}
 
   .site-foot{border-top:1px solid var(--line)}
   .foot-in{padding:26px 0 42px;font-family:var(--mono);font-size:12px;color:var(--sub);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
