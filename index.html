@@ -123,7 +123,8 @@
   @keyframes introOut{to{opacity:0;visibility:hidden;pointer-events:none}}
   /* smooth reveal, top to bottom */
   @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-  .site-head{animation:fadeUp .7s ease 1.5s both}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .site-head{animation:fadeIn .7s ease 1.5s both}
   .hero-block{animation:fadeUp .7s ease 1.62s both}
   main .section:nth-of-type(1){animation:fadeUp .7s ease 1.74s both}
   main .section:nth-of-type(2){animation:fadeUp .7s ease 1.86s both}
@@ -199,7 +200,7 @@
       </li>
     </ul>
     <p class="qualify">
-      <b>How we qualify.</b> We don&rsquo;t forward leads and hope. Before any introduction, we&rsquo;ve checked both sides: your recall volume, states, and timeline against an operator&rsquo;s real capacity for quarantine, certified destruction, and rework. You get introduced to one warehouse that fits, not a list to chase. That is the whole product.
+      <b>How we qualify.</b> This is the part that matters, so we don&rsquo;t rush it. We don&rsquo;t forward a name and wish you luck &mdash; we have a real conversation with both sides before anyone is introduced. On your side: the recall volume, the states it touched, the timeline the regulator put you on, and exactly what has to happen to the product. On theirs: whether the operator has genuine capacity right now for quarantine, certified destruction, or rework &mdash; not a website that claims it. We only make the introduction when both halves actually fit, and we&rsquo;ve prepared each side for the other before they ever speak. So when you walk into that room, the operator already understands your situation and is ready to move. No cold pitch, no re-explaining the crisis from scratch. A warm room, and a conversation built to close.
     </p>
   </section>
 
@@ -230,5 +231,6 @@
   </div>
 </footer>
 
+<script>window.scrollTo(0,0);window.addEventListener("load",function(){window.scrollTo(0,0);});</script>
 </body>
 </html>
