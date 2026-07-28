@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zer-ops-group.vercel.app/sitemap.xml
