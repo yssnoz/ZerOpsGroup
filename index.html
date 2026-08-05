@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ZerOps Group</title>
+<title>ZerOps Group — Recall Reverse Logistics</title>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://zer-ops-group.vercel.app/" />
+<meta property="og:url" content="https://zeropsgroup.com/" />
 <meta property="og:title" content="ZerOps Group" />
 <meta property="og:description" content="We connect companies mid-recall with the operators who make the problem disappear. Fast." />
-<meta property="og:image" content="https://zer-ops-group.vercel.app/preview-image.jpg" />
+<meta property="og:image" content="https://zeropsgroup.com/preview-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="ZerOps Group" />
 <meta name="twitter:description" content="We connect companies mid-recall with the operators who make the problem disappear. Fast." />
-<meta name="twitter:image" content="https://zer-ops-group.vercel.app/preview-image.jpg" />
+<meta name="twitter:image" content="https://zeropsgroup.com/preview-image.jpg" />
 <meta name="description" content="We connect companies mid-recall with the operators who make the problem disappear. Fast." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
     --mono:"Raleway",system-ui,sans-serif;
   }
   *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
   body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);font-size:18px;font-weight:500;line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
   .wrap{max-width:720px;margin:0 auto;padding:0 26px}
   .eyebrow{font-family:var(--mono);font-weight:700;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase}
@@ -44,6 +44,10 @@
   .nav a:hover{color:var(--accent)}
   .nav .li{display:inline-flex;align-items:center;color:var(--sub)}
   .nav .li:hover{color:var(--accent)}
+  /* hamburger button — hidden on desktop, shown on mobile */
+  .nav-toggle{display:none;background:none;border:0;padding:6px;cursor:pointer;line-height:0}
+  .nav-toggle span{display:block;width:22px;height:2px;background:var(--accent);margin:4px 0;border-radius:2px;transition:.25s}
+  .mobile-menu{display:none}
 
   /* ---- THINNER CINEMATIC HERO (photo + overlay, left-aligned light text) ---- */
   .hero-block{
@@ -107,10 +111,53 @@
   .foot-in a:hover{color:var(--accent)}
 
   a:focus-visible,.book:focus-visible,.hero-cta:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px}
-  @media (max-width:560px){
-    .nav{gap:15px}
-    .hero-in{padding:38px 0 44px}
-    .section{padding:42px 0}
+  @media (max-width:600px){
+    /* tighter frame */
+    body{font-size:16px}
+    .wrap{padding:0 20px}
+
+    /* nav: hide inline links, show hamburger */
+    .nav .a-link,.nav .li{display:none}
+    .nav-toggle{display:inline-block}
+    .head-in{padding:11px 0}
+    .brand .logo{height:26px}
+    .brand .name{font-size:16px}
+
+    /* dropdown panel */
+    .mobile-menu{display:block;position:absolute;top:100%;right:0;left:0;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 10px 24px rgba(8,18,32,.10);max-height:0;overflow:hidden;transition:max-height .28s ease}
+    .site-head{position:relative}
+    .mobile-menu.open{max-height:340px}
+    .mobile-menu a{display:block;padding:14px 20px;font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink);text-decoration:none;border-top:1px solid var(--rule-soft,#eef2f8)}
+    .mobile-menu a:first-child{border-top:0}
+    .mobile-menu a:active{background:var(--panel)}
+
+    /* hero: smaller, tighter */
+    .hero-in{padding:36px 0 40px;max-width:100%}
+    .hero-in h1{font-size:26px;line-height:1.24;margin:12px 0 16px}
+    .hero-in .eyebrow{font-size:10.5px;letter-spacing:.12em}
+    .hero-in .meta{font-size:12px;margin:0 0 22px}
+    .hero-cta{font-size:13px;padding:12px 20px}
+
+    /* sections: less air, smaller type */
+    .section{padding:34px 0}
+    .sec-note{font-size:12px;margin:0 0 20px}
+    .label{font-size:11px}
+    .feed li{padding:12px 0}
+    .feed .txt{font-size:15px}
+    .feed-src{font-size:13.5px}
+    .how li{padding:16px 0}
+    .how .desc{font-size:15px}
+    .qualify{padding:17px 18px;font-size:15px}
+    .essays a{font-size:18px}
+
+    /* cta */
+    .cta-in{padding:44px 0 50px}
+    .cta h2{font-size:22px}
+    .cta p{font-size:15.5px}
+    .book{font-size:13px;padding:13px 20px}
+
+    /* footer stacks */
+    .foot-in{flex-direction:column;gap:8px}
   }
 
   /* ---- intro / loading screen: plays once per load, home only ---- */
@@ -137,6 +184,32 @@
     .site-head,.hero-block,main .section,.cta,.site-foot{animation:none}
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ZerOps Group",
+  "alternateName": "ZOG",
+  "url": "https://zeropsgroup.com/",
+  "logo": "https://zeropsgroup.com/preview-image.jpg",
+  "description": "ZerOps Group connects companies facing an active FDA, USDA, or CPSC recall with the certified reverse-logistics operators who handle quarantine, certified destruction, and rework.",
+  "email": "medyassinezer@gmail.com",
+  "founder": { "@type": "Person", "name": "Yassine Zerhouni" },
+  "areaServed": "US",
+  "sameAs": [
+    "https://www.linkedin.com/in/yassine-zerhouni-2bb7b9226/"
+  ],
+  "knowsAbout": [
+    "recall reverse logistics",
+    "FDA product recalls",
+    "USDA FSIS recalls",
+    "CPSC recalls",
+    "quarantine warehousing",
+    "certified destruction",
+    "rework and relabeling"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -154,21 +227,28 @@
       <span class="name">ZerOps Group</span>
     </a>
     <nav class="nav">
-      <a href="#tracking">Tracking</a>
-      <a href="#work">How we work</a>
-      <a href="#contact">Contact</a>
+      <a class="a-link" href="#tracking">Tracking</a>
+      <a class="a-link" href="#work">How we work</a>
+      <a class="a-link" href="#contact">Contact</a>
       <a class="li" href="https://www.linkedin.com/in/yassine-zerhouni-2bb7b9226/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
       </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#tracking">Tracking</a>
+    <a href="#work">How we work</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.linkedin.com/in/yassine-zerhouni-2bb7b9226/" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </header>
 
 <div class="hero-block">
   <div class="wrap hero-in">
-    <span class="eyebrow">Private introductions</span>
+    <span class="eyebrow">Recall reverse logistics</span>
     <h1>We connect companies mid-recall with the operators who make the problem disappear. <span class="em">Fast.</span></h1>
-    <p class="meta">Independent operator. Recall reverse logistics.</p>
+    <p class="meta">Independent. Building this lane in the open, 2026&ndash;.</p>
     <a class="hero-cta" href="#contact">Book a 20-minute call &rarr;</a>
   </div>
 </div>
@@ -232,5 +312,14 @@
 </footer>
 
 <script>window.scrollTo(0,0);window.addEventListener("load",function(){window.scrollTo(0,0);});</script>
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),m=document.getElementById('mobileMenu');
+  if(t&&m){
+    t.addEventListener('click',function(){var o=m.classList.toggle('open');t.setAttribute('aria-expanded',o);});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');t.setAttribute('aria-expanded',false);});});
+  }
+})();
+</script>
 </body>
 </html>
