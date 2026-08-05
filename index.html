@@ -312,7 +312,13 @@
   </div>
 </footer>
 
-<script>window.scrollTo(0,0);window.addEventListener("load",function(){window.scrollTo(0,0);});</script>
+<script>
+  try{if('scrollRestoration' in history)history.scrollRestoration='manual';}catch(e){}
+  function _top(){var h=document.documentElement,p=h.style.scrollBehavior;h.style.scrollBehavior='auto';window.scrollTo(0,0);h.style.scrollBehavior=p;}
+  _top();
+  window.addEventListener('load',_top);
+  window.addEventListener('pageshow',_top);
+</script>
 <script>
 (function(){
   var t=document.getElementById('navToggle'),m=document.getElementById('mobileMenu');
