@@ -35,11 +35,11 @@
 
   /* ---- WHITE NAV BAR (separate from hero) ---- */
   .site-head{background:#ffffff;border-bottom:1px solid var(--line)}
-  .head-in{display:flex;align-items:center;justify-content:space-between;padding:13px 0;gap:16px}
-  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-  .brand .logo{height:30px;width:auto;display:block}
-  .brand .name{font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);letter-spacing:-.01em}
-  .nav{display:flex;gap:22px}
+  .head-in{display:flex;align-items:center;padding:13px 0}
+  .h-logo{display:inline-flex;align-items:center;line-height:0;text-decoration:none}
+  .h-logo .logo{height:30px;width:auto;display:block}
+  .h-name{font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);letter-spacing:-.01em;text-decoration:none;margin-left:10px}
+  .nav{display:flex;gap:22px;align-items:center;margin-left:auto}
   .nav a{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--sub);text-decoration:none}
   .nav a:hover{color:var(--accent)}
   .nav .li{display:inline-flex;align-items:center;color:var(--sub)}
@@ -119,20 +119,23 @@
     /* nav: hide inline links, show hamburger */
     .nav .a-link,.nav .li{display:none}
     .nav-toggle{display:inline-block}
-    .head-in{padding:11px 0}
-    .brand .logo{height:26px}
-    .brand .name{font-size:16px}
+    /* name left, logo centered, hamburger right */
+    .head-in{position:relative;padding:11px 20px;justify-content:space-between}
+    .h-name{margin-left:0;font-size:16px}
+    .h-logo{position:absolute;left:50%;transform:translateX(-50%)}
+    .h-logo .logo{height:26px}
+    .nav{margin-left:0}
 
     /* dropdown panel */
-    .mobile-menu{display:block;position:absolute;top:100%;right:0;left:0;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 10px 24px rgba(8,18,32,.10);max-height:0;overflow:hidden;transition:max-height .28s ease}
-    .site-head{position:relative}
+    .mobile-menu{display:block;position:absolute;top:100%;right:0;left:0;z-index:300;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 10px 24px rgba(8,18,32,.10);max-height:0;overflow:hidden;transition:max-height .28s ease}
+    .site-head{position:relative;z-index:300}
     .mobile-menu.open{max-height:340px}
     .mobile-menu a{display:block;padding:14px 20px;font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink);text-decoration:none;border-top:1px solid var(--rule-soft,#eef2f8)}
     .mobile-menu a:first-child{border-top:0}
     .mobile-menu a:active{background:var(--panel)}
 
     /* hero: smaller, tighter */
-    .hero-in{padding:36px 0 40px;max-width:100%}
+    .hero-in{padding:36px 20px 40px;max-width:100%}
     .hero-in h1{font-size:26px;line-height:1.24;margin:12px 0 16px}
     .hero-in .eyebrow{font-size:10.5px;letter-spacing:.12em}
     .hero-in .meta{font-size:12px;margin:0 0 22px}
@@ -151,7 +154,7 @@
     .essays a{font-size:18px}
 
     /* cta */
-    .cta-in{padding:44px 0 50px}
+    .cta-in{padding:44px 20px 50px}
     .cta h2{font-size:22px}
     .cta p{font-size:15.5px}
     .book{font-size:13px;padding:13px 20px}
@@ -222,10 +225,8 @@
 
 <header class="site-head">
   <div class="wrap head-in">
-    <a class="brand" href="/">
-      <img class="logo" src="logo-zog.png" alt="ZOG" />
-      <span class="name">ZerOps Group</span>
-    </a>
+    <a class="h-logo" href="/" aria-label="ZerOps Group home"><img class="logo" src="logo-zog.png" alt="ZOG" /></a>
+    <a class="h-name" href="/">ZerOps Group</a>
     <nav class="nav">
       <a class="a-link" href="#tracking">Tracking</a>
       <a class="a-link" href="#work">How we work</a>
