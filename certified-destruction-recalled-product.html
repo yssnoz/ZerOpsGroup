@@ -105,6 +105,12 @@
     .cta h2{font-size:22px}
     .foot-in{flex-direction:column;gap:8px}
   }
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .doc-head{animation:fadeUp .7s ease .05s both}
+  article{animation:fadeUp .7s ease .16s both}
+  .cta{animation:fadeUp .7s ease .26s both}
+  .site-foot{animation:fadeUp .7s ease .32s both}
+  @media (prefers-reduced-motion:reduce){.doc-head,article,.cta,.site-foot{animation:none}}
 </style>
 <script type="application/ld+json">
 {
