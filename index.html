@@ -66,6 +66,8 @@
   .hero-in .meta{font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:.02em;color:#c4d2e4;margin:0 0 28px}
   .hero-cta{display:inline-block;font-family:var(--mono);font-size:14px;letter-spacing:.02em;color:#fff;background:#4d86c4;padding:13px 22px;text-decoration:none;border-radius:2px;transition:background .15s ease}
   .hero-cta:hover{background:#619ad6}
+  .hero-alt{display:inline-block;margin-left:16px;font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:#c4d2e4;text-decoration:none;border-bottom:1px solid rgba(196,210,228,.45);padding-bottom:2px;transition:color .15s ease,border-color .15s ease}
+  .hero-alt:hover{color:#fff;border-color:#fff}
 
   /* ---- sections ---- */
   .section{padding:52px 0;border-top:1px solid var(--line)}
@@ -107,6 +109,9 @@
   .cta p{color:#c8d5e6;font-size:17.5px;max-width:54ch;margin:0 0 24px}
   .book{display:inline-block;font-family:var(--mono);font-weight:600;font-size:14px;letter-spacing:.02em;color:#fff;background:#4d86c4;padding:14px 24px;text-decoration:none;border-radius:2px;transition:background .15s ease}
   .book:hover{background:#619ad6}
+  .cta-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .book-alt{background:transparent;border:1px solid #4d86c4;color:#dbe7f6}
+  .book-alt:hover{background:rgba(77,134,196,.16)}
 
   .site-foot{border-top:1px solid var(--line)}
   .foot-in{padding:26px 0 42px;font-family:var(--mono);font-size:12px;color:var(--sub);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -143,6 +148,7 @@
     .hero-in .eyebrow{font-size:10.5px;letter-spacing:.12em}
     .hero-in .meta{font-size:12px;margin:0 0 22px}
     .hero-cta{font-size:13px;padding:12px 20px}
+    .hero-alt{display:block;margin-left:0;margin-top:14px}
 
     /* sections: less air, smaller type */
     .section{padding:34px 0}
@@ -182,6 +188,7 @@
   main .section:nth-of-type(1){animation:fadeUp .7s ease 1.74s both}
   main .section:nth-of-type(2){animation:fadeUp .7s ease 1.86s both}
   main .section:nth-of-type(3){animation:fadeUp .7s ease 1.98s both}
+  main .section:nth-of-type(4){animation:fadeUp .7s ease 2.04s both}
   .cta{animation:fadeUp .7s ease 2.1s both}
   .site-foot{animation:fadeUp .7s ease 2.2s both}
   @media (prefers-reduced-motion:reduce){
@@ -197,9 +204,9 @@
   "name": "ZerOps Group",
   "alternateName": "ZOG",
   "url": "https://zeropsgroup.com/",
-  "logo": "https://zeropsgroup.com/preview-image.jpg",
+  "logo": "https://zeropsgroup.com/logo-zog.png",
   "description": "ZerOps Group connects companies facing an active FDA, USDA, or CPSC recall with the certified reverse-logistics operators who handle quarantine, certified destruction, and rework.",
-  "email": "medyassinezer@gmail.com",
+  "email": "yassine@getzeropsgroup.com",
   "founder": { "@type": "Person", "name": "Yassine Zerhouni" },
   "areaServed": "US",
   "sameAs": [
@@ -233,6 +240,7 @@
     <nav class="nav">
       <a class="a-link" href="#tracking">Tracking</a>
       <a class="a-link" href="#work">How we work</a>
+      <a class="a-link" href="#operators">For operators</a>
       <a class="a-link" href="#contact">Contact</a>
       <a class="li" href="https://www.linkedin.com/in/yassine-zerhouni-2bb7b9226/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
@@ -243,6 +251,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#tracking">Tracking</a>
     <a href="#work">How we work</a>
+    <a href="#operators">For operators</a>
     <a href="#contact">Contact</a>
     <a href="https://www.linkedin.com/in/yassine-zerhouni-2bb7b9226/" target="_blank" rel="noopener">LinkedIn</a>
   </div>
@@ -252,8 +261,9 @@
   <div class="wrap hero-in">
     <span class="eyebrow">Recall reverse logistics</span>
     <h1>We connect companies mid-recall with the operators who make the problem disappear. <span class="em">Fast.</span></h1>
-    <p class="meta">Independent. Building this lane in the open, 2026&ndash;.</p>
+    <p class="meta">Independent operators. One lane &mdash; recall reverse logistics &mdash; worked end to end.</p>
     <a class="hero-cta" href="#contact">Book a 20-minute call &rarr;</a>
+    <a class="hero-alt" href="#operators">Run a warehouse? &rarr;</a>
   </div>
 </div>
 
@@ -288,6 +298,21 @@
     </p>
   </section>
 
+  <section class="section" id="operators">
+    <div class="sec-head"><span class="tick"></span><span class="label">For reverse-logistics operators</span></div>
+    <p class="sec-note">Run a warehouse that can take recall work? This side is for you.</p>
+    <ul class="how">
+      <li>
+        <span class="pair">Qualified demand &rarr; your dock</span>
+        <span class="desc">We bring you companies in an active recall that already fit what you do &mdash; the right capability, the right state, real volume on a real timeline. We&rsquo;ve had the conversation and confirmed the fit before you&rsquo;re ever introduced.</span>
+      </li>
+      <li>
+        <span class="pair">Commission-based &rarr; nothing to join</span>
+        <span class="desc">No retainer, no listing fee, no cost to sit on the bench. We earn only when you do &mdash; a commission on work that actually closes and collects. If it doesn&rsquo;t fit your capacity or your geography, we don&rsquo;t send it.</span>
+      </li>
+    </ul>
+  </section>
+
   <section class="section" id="writing">
     <div class="sec-head"><span class="tick"></span><span class="label">Writing</span></div>
     <p class="sec-note">What we see in this market that outsiders miss.</p>
@@ -301,17 +326,20 @@
 
 <section class="cta" id="contact">
   <div class="wrap cta-in">
-    <span class="eyebrow">Work with Yassine</span>
+    <span class="eyebrow">Work with us</span>
     <h2>Tell us where you&rsquo;re at and what you&rsquo;re trying to fix.</h2>
-    <p>If you&rsquo;ve got an active recall and product with nowhere to go, or you run a warehouse that can take it, message us. We&rsquo;ll tell you fast whether there&rsquo;s a match.</p>
-    <a class="book" href="https://cal.com/yassine-zerhouni-zeropsgroup" target="_blank" rel="noopener">Book a 20-minute call &rarr;</a>
+    <p>Active recall with product and nowhere to put it, or a warehouse that can take it on &mdash; either way, book a call. We&rsquo;ll tell you fast whether there&rsquo;s a match.</p>
+    <div class="cta-actions">
+      <a class="book" href="https://cal.com/yassine-zerhouni-zeropsgroup" target="_blank" rel="noopener">In a recall &mdash; book a call &rarr;</a>
+      <a class="book book-alt" href="https://cal.com/yassine-zerhouni-zeropsgroup" target="_blank" rel="noopener">Run a warehouse &mdash; book a call &rarr;</a>
+    </div>
   </div>
 </section>
 
 <footer class="site-foot">
   <div class="wrap foot-in">
     <span>&copy; 2026 ZerOps Group &middot; Yassine Zerhouni</span>
-    <a href="mailto:medyassinezer@gmail.com">medyassinezer@gmail.com</a>
+    <a href="mailto:yassine@getzeropsgroup.com">yassine@getzeropsgroup.com</a>
   </div>
 </footer>
 
