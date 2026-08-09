@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#dde1f0;--panel:#e0e5ef;--ink:#0c1a2b;--body:#313e4d;--sub:#566472;--line:#a8b3c7;
+    --bg:#ccd0de;--panel:#e0e5ef;--ink:#0c1a2b;--body:#313e4d;--sub:#566472;--line:#a8b3c7;
     --accent:#092a4b;--accent-2:#3f77b3;
     --display:"Cinzel",Georgia,serif;
     --sans:"Raleway",system-ui,-apple-system,Segoe UI,sans-serif;
@@ -38,15 +38,17 @@
 
   /* ---- WHITE NAV BAR (separate from hero) ---- */
   .site-head{background:#ffffff;border-bottom:1px solid var(--line)}
-  .head-in{display:flex;align-items:center;padding:13px 0}
+  .head-in{display:flex;align-items:center;gap:20px;padding:13px 0}
+  .brand{display:flex;align-items:center;gap:10px;flex:1 1 0;min-width:0}
   .h-logo{display:inline-flex;align-items:center;line-height:0;text-decoration:none}
   .h-logo .logo{height:30px;width:auto;display:block}
-  .h-name{font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);letter-spacing:-.01em;text-decoration:none;margin-left:10px}
-  .nav{display:flex;gap:22px;align-items:center;margin-left:auto}
-  .nav a{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--sub);text-decoration:none}
-  .nav a:hover{color:var(--accent)}
-  .nav .li{display:inline-flex;align-items:center;color:var(--sub)}
-  .nav .li:hover{color:var(--accent)}
+  .h-name{font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+  .nav-center{display:flex;gap:26px;align-items:center;justify-content:center;flex:0 1 auto}
+  .nav-center a{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--sub);text-decoration:none;white-space:nowrap}
+  .nav-center a:hover{color:var(--accent)}
+  .nav-right{display:flex;align-items:center;gap:14px;flex:1 1 0;justify-content:flex-end}
+  .nav-right .li{display:inline-flex;align-items:center;color:var(--sub)}
+  .nav-right .li:hover{color:var(--accent)}
   /* hamburger button — hidden on desktop, shown on mobile */
   .nav-toggle{display:none;background:none;border:0;padding:6px;cursor:pointer;line-height:0}
   .nav-toggle span{display:block;width:22px;height:2px;background:var(--accent);margin:4px 0;border-radius:2px;transition:.25s}
@@ -125,14 +127,16 @@
     .wrap{padding:0 20px}
 
     /* nav: hide inline links, show hamburger */
-    .nav .a-link,.nav .li{display:none}
+    .nav-center{display:none}
+    .nav-right .li{display:none}
     .nav-toggle{display:inline-block}
     /* name left, logo centered, hamburger right */
     .head-in{position:relative;padding:11px 20px;justify-content:space-between}
-    .h-name{margin-left:0;font-size:16px}
+    .brand{flex:0 0 auto}
+    .nav-right{flex:0 0 auto}
+    .h-name{font-size:16px}
     .h-logo{position:absolute;left:50%;transform:translateX(-50%)}
     .h-logo .logo{height:26px}
-    .nav{margin-left:0}
 
     /* dropdown panel */
     .mobile-menu{display:block;position:absolute;top:100%;right:0;left:0;z-index:300;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 10px 24px rgba(8,18,32,.10);max-height:0;overflow:hidden;transition:max-height .28s ease}
@@ -235,18 +239,22 @@
 
 <header class="site-head">
   <div class="wrap head-in">
-    <a class="h-logo" href="/" aria-label="ZerOps Group home"><img class="logo" src="logo-zog.png" alt="ZOG" /></a>
-    <a class="h-name" href="/">ZerOps Group</a>
-    <nav class="nav">
+    <div class="brand">
+      <a class="h-logo" href="/" aria-label="ZerOps Group home"><img class="logo" src="logo-zog.png" alt="ZOG" /></a>
+      <a class="h-name" href="/">ZerOps Group</a>
+    </div>
+    <nav class="nav-center">
       <a class="a-link" href="#tracking">Tracking</a>
       <a class="a-link" href="#work">How we work</a>
       <a class="a-link" href="#operators">For operators</a>
       <a class="a-link" href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
       <a class="li" href="https://www.linkedin.com/in/yassine-zerhouni-2bb7b9226/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </nav>
+    </div>
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#tracking">Tracking</a>
