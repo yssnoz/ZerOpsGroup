@@ -111,6 +111,10 @@
   .cta{animation:fadeUp .7s ease .26s both}
   .site-foot{animation:fadeUp .7s ease .32s both}
   @media (prefers-reduced-motion:reduce){.doc-head,article,.cta,.site-foot{animation:none}}
+  .dl-callout{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent-2);border-radius:6px;padding:18px 20px;margin:30px 0}
+  .dl-callout .dl-txt{font-size:16px;color:var(--body);max-width:58ch}
+  .dl-callout strong{color:var(--ink);font-weight:600}
+  .dl-callout .book{white-space:nowrap;flex-shrink:0}
 </style>
 <script type="application/ld+json">
 {
@@ -195,6 +199,11 @@
     <h2>Keep the paperwork longer than you think</h2>
     <div class="note"><b>Practical point.</b> Recall litigation and regulatory follow-up can arrive years after the event, and recall insurers frequently condition payment on exactly this documentation. Retain the certificate of destruction and its manifests, weight tickets, and footage on the same clock as the rest of your recall records — not filed and forgotten a month later. The paperwork&rsquo;s job starts after the product is gone.</div>
 
+        <div class="dl-callout">
+      <div class="dl-txt"><strong>Free: the First 48 Hours of a Recall checklist.</strong> The physical-inventory steps in order &mdash; secure, segregate, document.</div>
+      <button class="book js-magnet" type="button">Get the checklist &rarr;</button>
+    </div>
+
     <h2>Where the difficulty actually is</h2>
     <p>Knowing all of this is the easy part. The hard part is finding a facility certified to do it, with real capacity this week, while the regulator&rsquo;s clock is running — and doing it without pausing your recall to interview warehouses. That&rsquo;s the part we handle.</p>
 
@@ -227,6 +236,84 @@
     <a href="mailto:yassine@getzeropsgroup.com">yassine@getzeropsgroup.com</a>
   </div>
 </footer>
+
+
+<!-- Lead-magnet modal -->
+<style>
+  .ml-overlay{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(9,20,35,.62);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+  .ml-overlay.open{display:flex;animation:mlFade .2s ease both}
+  @keyframes mlFade{from{opacity:0}to{opacity:1}}
+  .ml-card{position:relative;width:100%;max-width:440px;background:#f5f3ee;border:1px solid #c9cdd6;border-radius:10px;box-shadow:0 24px 60px rgba(9,20,35,.35);padding:34px 30px 30px;font-family:"Raleway",system-ui,-apple-system,sans-serif;animation:mlUp .28s ease both}
+  @keyframes mlUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .ml-x{position:absolute;top:11px;right:14px;background:none;border:0;font-size:25px;line-height:1;color:#5b6472;cursor:pointer;padding:4px}
+  .ml-x:hover{color:#092a4b}
+  .ml-eyebrow{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#3f77b3;margin:0 0 8px}
+  .ml-card h3{font-family:"Cinzel",Georgia,serif;font-weight:600;font-size:21px;color:#0c1a2b;margin:0 0 10px;line-height:1.25}
+  .ml-sub{font-size:14.5px;color:#313e4d;line-height:1.55;margin:0 0 18px}
+  .ml-form{display:flex;flex-direction:column;gap:10px}
+  .ml-field{font-family:inherit;font-size:15px;color:#0c1a2b;background:#fff;border:1px solid #a8b3c7;border-radius:5px;padding:12px 13px;outline:none}
+  .ml-field:focus{border-color:#3f77b3;box-shadow:0 0 0 3px rgba(63,119,179,.15)}
+  .ml-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+  .ml-submit{margin-top:4px;font-family:inherit;font-weight:600;font-size:14.5px;letter-spacing:.01em;color:#fff;background:#4d86c4;border:0;border-radius:4px;padding:13px 18px;cursor:pointer;transition:background .15s ease}
+  .ml-submit:hover{background:#619ad6}
+  .ml-submit:disabled{opacity:.6;cursor:default}
+  .ml-note{font-size:11.5px;color:#5b6472;line-height:1.5;margin:10px 0 0}
+  .ml-success p{font-size:14.5px;color:#313e4d;line-height:1.55;margin:6px 0 0}
+  .ml-error{color:#b4472b;font-size:14px;margin-top:12px}
+</style>
+<div class="ml-overlay" id="mlModal" role="dialog" aria-modal="true" aria-labelledby="mlTitle">
+  <div class="ml-card" role="document">
+    <button class="ml-x" type="button" aria-label="Close">&times;</button>
+    <div class="ml-main">
+      <p class="ml-eyebrow">Free checklist</p>
+      <h3 id="mlTitle">The First 48 Hours of a Recall</h3>
+      <p class="ml-sub">The physical-inventory checklist &mdash; what to secure, segregate, and document before the returns start moving. Tell us where to send it.</p>
+      <form class="ml-form" id="mlForm" novalidate>
+        <input class="ml-field" type="text" name="name" placeholder="First name" autocomplete="given-name" required>
+        <input class="ml-field" type="email" name="email" placeholder="Work email" autocomplete="email" required>
+        <input class="ml-hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="ml-submit" type="submit">Send me the checklist &rarr;</button>
+        <p class="ml-note">You&rsquo;ll get a one-click confirmation email first. No spam &mdash; unsubscribe anytime.</p>
+      </form>
+    </div>
+    <div class="ml-main ml-success" hidden>
+      <p class="ml-eyebrow">Almost there</p>
+      <h3>Check your inbox.</h3>
+      <p>We&rsquo;ve sent a confirmation email. Click the link inside and the checklist is on its way.</p>
+    </div>
+    <div class="ml-error" id="mlError" hidden></div>
+  </div>
+</div>
+<script>
+(function(){
+  var modal=document.getElementById('mlModal'); if(!modal) return;
+  var form=document.getElementById('mlForm');
+  var main=modal.querySelector('.ml-main:not(.ml-success)');
+  var success=modal.querySelector('.ml-success');
+  var errBox=document.getElementById('mlError');
+  var submitBtn=form.querySelector('.ml-submit');
+  function open(){modal.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){var f=form.querySelector('input[name=name]');if(f)f.focus();},60);}
+  function close(){modal.classList.remove('open');document.body.style.overflow='';}
+  document.addEventListener('click',function(e){var t=e.target.closest('.js-magnet,[data-magnet]');if(t){e.preventDefault();open();}});
+  modal.querySelector('.ml-x').addEventListener('click',close);
+  modal.addEventListener('click',function(e){if(e.target===modal)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))close();});
+  form.addEventListener('submit',function(e){
+    e.preventDefault(); errBox.hidden=true; errBox.textContent='';
+    var data={name:form.name.value.trim(),email:form.email.value.trim(),company:form.company.value.trim()};
+    if(!data.name||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){errBox.textContent='Please enter your name and a valid email.';errBox.hidden=false;return;}
+    submitBtn.disabled=true; submitBtn.textContent='Sending\u2026';
+    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){return r.json().catch(function(){return{ok:r.ok};});})
+      .then(function(res){
+        if(res&&res.ok){main.hidden=true;success.hidden=false;}
+        else{errBox.textContent=(res&&res.error)||'Something went wrong. Please try again.';errBox.hidden=false;submitBtn.disabled=false;submitBtn.textContent='Send me the checklist \u2192';}
+      })
+      .catch(function(){errBox.textContent='Network error. Please try again.';errBox.hidden=false;submitBtn.disabled=false;submitBtn.textContent='Send me the checklist \u2192';});
+  });
+})();
+</script>
+<!-- /Lead-magnet modal -->
 
 </body>
 </html>

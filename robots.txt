@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /first-48-hours-recall-checklist.pdf
 Sitemap: https://zeropsgroup.com/sitemap.xml
