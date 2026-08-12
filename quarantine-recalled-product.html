@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#ccd0de;--panel:#e0e5ef;--ink:#0c1a2b;--body:#313e4d;--sub:#566472;--line:#a8b3c7;
+    --bg:#e7ebfd;--panel:#e0e5ef;--ink:#0c1a2b;--body:#313e4d;--sub:#566472;--line:#a8b3c7;
     --accent:#092a4b;--accent-2:#3f77b3;
     --display:"Cinzel",Georgia,serif;
     --sans:"Raleway",system-ui,-apple-system,Segoe UI,sans-serif;
@@ -38,14 +38,16 @@
   .label{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
 
   /* nav (matches home) */
-  .site-head{background:#fff;border-bottom:1px solid var(--line)}
+  .site-head{background:#092a4b;border-bottom:1px solid #092a4b;position:relative}
+  .site-head::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .site-head .head-in{position:relative;z-index:1}
   .head-in{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:13px 0}
   .brand{display:flex;align-items:center;gap:10px}
   .h-logo{display:inline-flex;align-items:center;line-height:0;text-decoration:none}
   .h-logo .logo{height:30px;width:auto;display:block}
-  .h-name{font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
-  .back{font-family:var(--mono);font-size:12px;color:var(--sub);text-decoration:none}
-  .back:hover{color:var(--accent)}
+  .h-name{font-family:var(--display);font-weight:600;font-size:18px;color:#f4f7fb;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+  .back{font-family:var(--mono);font-size:12px;color:#c4d2e4;text-decoration:none}
+  .back:hover{color:#fff}
 
   /* header */
   .doc-head{border-bottom:1px solid var(--line)}
@@ -144,7 +146,7 @@
 <header class="site-head">
   <div class="wrap head-in">
     <div class="brand">
-      <a class="h-logo" href="index.html" aria-label="ZerOps Group home"><img class="logo" src="logo-zog.png" alt="ZOG" /></a>
+      <a class="h-logo" href="index.html" aria-label="ZerOps Group home"><img class="logo" src="logo-zog-white.png" alt="ZOG" /></a>
       <a class="h-name" href="index.html">ZerOps Group</a>
     </div>
     <a class="back" href="index.html">&larr; back</a>
